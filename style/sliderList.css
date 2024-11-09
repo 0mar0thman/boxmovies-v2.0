@@ -1,0 +1,124 @@
+.slider-container {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card {
+  width: 200px;
+  margin: 0 5px;
+}
+
+.card-new-movies {
+  margin:  15px auto;
+
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slider-container .btn-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none ;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#prevCardButton,
+#prevCardButtonVoteCount,
+#prevCardButtonVotedMovies,
+#prevCardButtonReleaseDate {
+  left: 0;
+}
+
+#nextCardButton,
+#nextCardButtonVoteCount,
+#nextCardButtonVotedMovies,
+#nextCardButtonReleaseDate {
+  right: 0;
+}
+
+.card-body {
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(24, 23, 42, 1) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    color: white;
+}
+
+
+.pagination button.active {
+  background-color: #007bff;
+}
+/* For very small screens, adjust to 2 cards */
+@media (max-width: 976px) {
+  .card {
+    width: calc(50% - 10px);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(24, 23, 42, 1) 50%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    height: auto;
+  }
+  .pagination {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 5px 0;
+  }
+
+  .pagination button {
+    font-size: 12px;
+    padding: 5px 10px;
+    margin: 3px;
+  }
+
+  .pagination button.active {
+    background-color: #007bff;
+  }
+
+  .pagination button:hover {
+    background-color: #e2e6ea;
+    color: black;
+  }
+
+}
+
+.card-text  {
+color: rgb(253, 253, 155);
+border: 1px solid rgb(253, 253, 155);
+ width: 30%;
+ justify-content: center;
+ box-shadow: inset 0px 0px 10px rgba(234, 255, 150, 0.7);
+ 
+}
+
+.card-body {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}

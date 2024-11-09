@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inconsolata:wdth,wght@103.1,200..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oxygen:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./bootstrap/bootstrap.css" />
+
+    <link rel="stylesheet" href="../style/search.css">
+    <link rel="stylesheet" href="../style/LoginFreeNow.css">
+    <link rel="stylesheet" href="../style/footer.css">
+    <link rel="stylesheet" href="../style/InputSearch.css">
+    <link rel="stylesheet" href="../style/nav.css">
+    <link rel="stylesheet" href="../style/popup.css">
+    <link rel="stylesheet" href="../style/register.css">
+    <link rel="stylesheet" href="../style/reset.css">
+    <link rel="stylesheet" href="../style/sliderList.css">
+    <link rel="stylesheet" href="../style/style-js-move.css">
+    <link rel="stylesheet" href="../style/slider.css">
+    <link rel="stylesheet" href="../style//responsive.css">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/cast.css" />
+
+    <title>Movie</title>
+  </head>
+  <body>
+    <!----------------------------- nav bar ---------------------------->
+    <div id="navBar">
+      <nav id="div-nav" class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand w-25 img-logo"
+            href="../index.html"
+            ><img
+              class="w-50 h-100"
+              src="../recources/images/Picsart_24-08-14_19-33-33-254.png"
+              alt="BoxMovies"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo01"
+            aria-controls="navbarTogglerDemo01"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <form class="form form-responsive">
+            <input
+              class="input"
+              type="text"
+              placeholder="Search Boxmovies"
+              id="searchInput3"
+            />
+            <div class="fancy-bg"></div>
+            <div class="search">
+              <svg
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+                class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-dnmrzs r-4wgw6l r-f727ji r-bnwqim r-1plcrui r-lrvibr"
+              >
+                <g>
+                  <path
+                    d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+                  ></path>
+                </g>
+              </svg>
+            </div>
+            <button class="close-btn" type="reset">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </form>
+
+          <div
+            class="collapse navbar-collapse nav-img"
+            id="navbarTogglerDemo01"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white"
+                  aria-current="page"
+                  href="pages/newMovies.html"
+                  >New Movies</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" aria-current="page" href="#"
+                  >New Series</a
+                >
+              </li>
+            </ul>
+          </div>
+          <a href="pages/register.html" class="btn-shine"
+            >Login Free Now</a
+          >
+        </div>
+      </nav>
+    </div>
+    <!-----------------------search------------------------>
+    <div id="popup3">
+      <input
+        class="input"
+        type="text"
+        placeholder="Search Boxmovies"
+        id="searchInputInsidePageMovie"
+      />
+      <div class="fancy-bg"></div>
+      <span id="close-popup3">&times;</span>
+      <div id="popup-content3">
+        <h2>
+          Search results:
+          <h4 id="resultCount3"></h4>
+        </h2>
+        <div id="searchResults3"></div>
+      </div>
+    </div>
+    <!-----------------------header------------------------>
+
+    <div class="containered">
+      <img id="backdrop_path" alt="backdrop_path" />
+
+      <div class="info">
+        <h1 id="title" class="title2"></h1>
+        <p id="overview" class="overview"></p>
+        <div class="div-info" class="div-info">
+          <p id="original_title" class="original_title"></p>
+          <p id="average" class="average"></p>
+          <p id="release_date" class="release_date"></p>
+        </div>
+      </div>
+
+      <div class="img-Poster">
+        <img id="poster" alt="Poster" />
+      </div>
+      <div class="video">
+        <div id="videoContainer"></div>
+      </div>
+    </div>
+<!------------------cast------------------------------------>
+    <section id="movie-details">
+    </section>
+    
+    <section id="cast-and-crew" class="my-4">
+      <div class="cast-crew-container">
+        <div class="line left-line"></div>
+        <h2 class="cast-crew-title">Cast & Crew</h2>
+        <div class="line right-line"></div>
+    </div>
+    
+      <div id="crew-container">
+        <div id="director" class="person">
+          <h3>Director</h3>
+          <div id="director-info"></div>
+        </div>
+        <div id="main-cast" class="person">
+          <h3>Main Cast</h3>
+          <div id="cast-info"></div>
+        </div>
+      </div>
+    </section>
+    
+
+    <!--------------------content body------------------------>
+
+    <div class="container-fluid">
+      <hr />
+      <div class="header-section">
+        <h2>Popular Movies</h2>
+        <div id="pagination" class="pagination"></div>
+      </div>
+      <hr class="mb-2" />
+      <div class="slider-container">
+        <button id="prevCardButton" class="btn-nav">&lt;</button>
+        <div id="slider" class="slider"></div>
+        <button id="nextCardButton" class="btn-nav">&gt;</button>
+      </div>
+
+      <hr />
+      <div class="header-section">
+        <h2>Vote Count</h2>
+        <div id="paginationVoteCount" class="pagination"></div>
+      </div>
+      <hr class="mb-2" />
+      <div class="slider-container">
+        <button id="prevCardButtonVoteCount" class="btn-nav">&lt;</button>
+        <div id="sliderVoteCount" class="slider"></div>
+        <button id="nextCardButtonVoteCount" class="btn-nav">&gt;</button>
+      </div>
+
+      <hr />
+      <div class="header-section">
+        <h2>Voted Movies Slider</h2>
+        <div id="paginationVotedMovies" class="pagination"></div>
+      </div>
+      <hr class="mb-2" />
+      <div class="slider-container">
+        <button id="prevCardButtonVotedMovies" class="btn-nav">&lt;</button>
+        <div id="sliderVotedMovies" class="slider"></div>
+        <button id="nextCardButtonVotedMovies" class="btn-nav">&gt;</button>
+      </div>
+
+      <hr />
+      <div class="header-section">
+        <h2>Latest Movies (By Release Date)</h2>
+        <div id="paginationReleaseDate" class="pagination"></div>
+      </div>
+      <hr class="mb-2" />
+      <div class="slider-container">
+        <button id="prevCardButtonReleaseDate" class="btn-nav">&lt;</button>
+        <div id="sliderReleaseDate" class="slider"></div>
+        <button id="nextCardButtonReleaseDate" class="btn-nav">&gt;</button>
+      </div>
+    </div>
+    <!---------------------------- footer ---------------------->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="#">Boxmovies</a>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 MyWebsite. All rights reserved.</p>
+        <p>omar mohamed osman</p>
+      </div>
+    </footer>
+
+    <script src="../style/fontawesome/all.min.js"></script>
+    <script src="./bootstrap/bootstrap.min.js"></script>
+    <script src="../style/bootstrap/popper.min.js"></script>
+
+    <script src="./pagesJS/releaseDate.js" type="module"></script>
+    <script src="./pagesJS/voteAverage.js" type="module"></script>
+    <script src="./pagesJS/voteCount.js" type="module"></script>
+    <script src="./pagesJS/popularity.js" type="module"></script>
+
+    <script src="./pagesJS/SearchBar/searchInputPageMovie.js"></script>
+    <script src="./pagesJS/SearchBar/popupPageMovie.js"></script>
+
+    <script src="./pagesJS/StorageOOP/PageMovie.js" type="module"></script>
+    <script src="./pagesJS/pageMovie.js" type="module"></script>
+  </body>
+</html>

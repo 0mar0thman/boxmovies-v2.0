@@ -1,0 +1,143 @@
+#searchInput {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+#popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  z-index: 9999;
+  overflow: auto;
+  padding: 10px;
+}
+#popup-content {
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+#close-popup {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+#popup a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 12px;
+}
+#searchInputInside {
+  text-align: center;
+}
+
+/* ----------------------new movie------------------------ */
+
+#searchInput2 {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+#popup2 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  z-index: 9999;
+  overflow: auto;
+  padding: 10px;
+}
+#popup-content2 {
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+#close-popup2 {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+#popup2 a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 12px;
+}
+#searchInputInsideNewMovie {
+  text-align: center;
+}
+
+/* -------------------page movie---------------- */
+
+#searchInput3 {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+}
+#popup3 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8); 
+  color: white;
+  z-index: 9999;
+  overflow: auto;
+  padding: 10px;
+}
+#popup-content3 {
+  background-color: #000000;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: auto;
+  text-align: left;
+}
+#close-popup3 {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+
+#popup3 a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 12px;
+}
+
+#searchInputInsidePageMovie {
+  text-align: center;
+}
+
+#resultCount3 {
+  color: bisque;
+  display:  inline;
+  margin-left: 10px;
+}

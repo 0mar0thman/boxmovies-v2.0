@@ -1,0 +1,49 @@
+.container-img {
+  margin: 10px 0 0 200px;
+  width: 70%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;    
+}
+.container-img img {
+  width: 15%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: none ;
+  transition: all ease-in-out 2s;
+}
+.container-img img:hover {
+  width: 100%;
+}
+.wrapper {
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: space-between; 
+  width: 90%;
+  height: auto; 
+  border-radius: 15px;
+  overflow: hidden;
+  margin:10px auto ;
+}
+
+.Card {
+  flex: 5 5 25%; 
+  height: 35px;
+  margin: 6px; 
+  transition: flex 0.5s ease;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: rgba(8, 82, 105, 0.16);
+  box-shadow: 2px 4px 10px rgb(0, 0, 0); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.Card:hover {
+  flex: 2 5 30%; 
+  background-color: rgb(11, 11, 39);
+}

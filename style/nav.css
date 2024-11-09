@@ -1,0 +1,60 @@
+.navbar-brand {
+  width: 20%
+}
+
+nav {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(24, 23, 42, 1) 50%,
+      rgba(0, 0, 0, 1) 100%);
+}
+
+.navbar {
+  z-index: 20;
+}
+
+.form {
+  width: 30%;
+}
+
+.input {
+  width: 100% !important;
+}
+
+.img-logo {
+  width: 12% !important; 
+}
+
+.img-logo img {
+  width: 100% !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1.2rem;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+}
+
+.side-left {
+  width: 20%;
+  background: rgb(24, 23, 42);
+  background: radial-gradient(circle, rgba(24, 23, 42, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  z-index: 10;
+  position: fixed;
+  height: 2000px;
+}
+
+.side-left .form {
+  position: fixed;
+  z-index: 100;
+  margin-top: 100px;
+}

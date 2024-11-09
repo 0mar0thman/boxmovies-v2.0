@@ -1,0 +1,46 @@
+body {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgb(39, 65, 72) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: white !important;
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  display: inline;
+  gap: 10px;
+  font-size: larger;
+  margin-left: 20px;
+  text-align: right;
+}
+
+ul li a {
+  border-radius: 7px;
+  transition: all 0.3s;
+  margin-left: 20px;
+}
+
+ul li a:hover {
+  color: aqua !important;
+}
+
+h2 {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+hr {
+  margin: 0;
+}
+
+.container {
+  width: 90% !important;
+}

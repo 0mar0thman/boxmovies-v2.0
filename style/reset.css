@@ -1,0 +1,18 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  /* font-family: "Questrial", sans-serif; */
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0  ;
+  padding: 0; 
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

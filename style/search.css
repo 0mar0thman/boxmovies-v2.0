@@ -1,0 +1,285 @@
+.div-card {
+  display: flex;
+  flex-direction: column;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(24, 23, 42, 1) 50%,
+      rgba(0, 0, 0, 1) 100%);
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.div-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin: auto;
+  position: relative;
+  transition: all 0.5s;
+
+}
+
+.div-card .span-star {
+  color: yellow;
+  position: absolute;
+  margin: 2px 0 0 2px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 2px;
+  transition: all 0.5s;
+}
+
+.div-card .star {
+  color: yellow;
+  transition: all 0.5s;
+}
+
+.div-card h5 {
+  text-shadow: 2px 2px 5px rgba(15, 150, 98, 1);
+  color: bisque;
+  transition: all 0.5s;
+}
+
+.bg-div-card {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 3, 56) 57%,
+      rgb(0, 0, 0) 100%);
+}
+
+.movies-container div {
+  display: inline-block;
+  width: 20%;
+  padding: 3px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+.movies-container h5 {
+  margin-top: 5px;
+  transition: all 0.5s;
+}
+
+#nextVotePageButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  width: 10%;
+  font-size: 29px;
+  transition: all 0.5s;
+}
+
+#nextVotePageButton:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(23, 31, 188) 57%,
+      rgb(0, 0, 0) 100%);
+}
+
+#nextvoteAverageButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  width: 10%;
+  font-size: 29px;
+  transition: all 0.5s;
+}
+
+#nextvoteAverageButton:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(23, 31, 188) 57%,
+      rgb(0, 0, 0) 100%);
+}
+
+#nextreleaseDateButton {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  float: right;
+  width: 10%;
+  font-size: 29px;
+  transition: all 0.5s;
+}
+
+#nextreleaseDateButton:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(90deg,
+      rgb(0, 0, 0) 0%,
+      rgb(23, 31, 188) 57%,
+      rgb(0, 0, 0) 100%);
+}
+
+#popularity {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.5s;
+}
+
+#popularity .div-card {
+  flex: 1 1 calc(10.333% - 20px);
+  margin: 5px;
+  box-sizing: border-box;
+  transition: all ease-in-out 0.1s;
+}
+
+#popularity .div-card:hover {
+  /* transform: scale(1.04);  */
+  background-color: blueviolet;
+}
+
+
+#voteCount {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.5s;
+}
+
+#voteCount .div-card {
+  flex: 1 1 calc(10.333% - 20px);
+  margin: 5px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+#voteAverage {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.5s;
+}
+
+#voteAverage .div-card {
+  flex: 1 1 calc(10.333% - 20px);
+  margin: 5px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+.flexiblety {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+#releaseDate {
+  display: flex;
+  flex-wrap: wrap;
+  transition: all 0.5s;
+}
+
+#releaseDate .div-card {
+  flex: 1 1 calc(10.333% - 20px);
+  margin: 5px;
+  box-sizing: border-box;
+  transition: all 0.5s;
+}
+
+.bg-div-card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 10px;
+  transition: all 0.5s;
+}
+
+.search-card {
+  width: 100% !important;
+  display: flex;
+  justify-content: space-between;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(24, 23, 42, 1) 50%,
+      rgba(0, 0, 0, 1) 100%);
+  position: relative;
+}
+
+.hr-none {
+  margin: 0px;
+}
+
+#searchResults p,
+#searchResults2 p,
+#searchResults3 p {
+  text-align: end;
+  position: absolute;
+  z-index: 10;
+}
+
+#resultCount,
+#resultCount2,
+#resultCount3 {
+  color: bisque;
+  margin: 0px;
+  margin-left: 3%;
+  text-align: end;
+  display: inline;
+  z-index: 10;
+  position: relative;
+}
+
+#searchInput,
+#searchInput2,
+#searchInput3 {
+  margin-left: 50px;
+  z-index: 10;
+  position: relative;
+}
+
+h6 {
+  position: absolute;
+  margin-top: 60px;
+}
+
+#searchResults h5,
+#searchResults2 h5,
+#searchResults3 h5 {
+  transition: all 0.2s;
+  margin-left: 10px;
+}
+
+#searchResults div:hover h5,
+#searchResults2 div:hover h5,
+#searchResults3 div:hover h5 {
+  color: bisque;
+  margin-left: 15px;
+  transition: all 0.2s;
+}
+
+#searchResults div,
+#searchResults2 div,
+#searchResults3 div {
+  z-index: 10;
+  position: relative;
+}
+
+#searchResults div img,
+#searchResults2 div img,
+#searchResults3 div img {
+  transition: all 0.2s;
+}
+
+#searchResults div:hover img,
+#searchResults2 div:hover img,
+#searchResults3 div:hover img {
+  transition: all 0.5s;
+}
+
+.card-img-poster {
+  width: 10% !important;
+}
+
+.span-view {
+  display: flex;
+  align-items: center;
+}
