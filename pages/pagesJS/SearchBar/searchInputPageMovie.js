@@ -1,30 +1,32 @@
-
-
 const apiKey = "bd27fabd4f448617eb4ef4dd33c7b66a";
 const youtubeApiKey = "AIzaSyAYjh_9bTwrrncv2ENpEGSYKHtgJjv4QJY";
 
 document.getElementById("searchInput3").addEventListener("keyup", function () {
   const query = this.value.trim();
-  console.log("Query:", query); 
+  console.log("Query:", query);
   if (query.length > 0) {
     searchMovies(query);
   } else {
     document.getElementById("searchResults3").innerHTML = "";
-    document.getElementById("resultCount3").innerHTML = ""; // إخفاء الرسالة عند عدم وجود بحث
+    document.getElementById("resultCount3").innerHTML = "";
   }
 });
-document.getElementById("searchInputInsidePageMovie").addEventListener("keyup", function () {
-  const query = this.value.trim();
-  if (query.length > 0) {
-    searchMovies(query);
-  } else {
-    document.getElementById("searchResults3").innerHTML = "";
-    document.getElementById("resultCount3").innerHTML = ""; // إخفاء الرسالة عند عدم وجود بحث
-  }
-});
+document
+  .getElementById("searchInputInsidePageMovie")
+  .addEventListener("keyup", function () {
+    const query = this.value.trim();
+    if (query.length > 0) {
+      searchMovies(query);
+    } else {
+      document.getElementById("searchResults3").innerHTML = "";
+      document.getElementById("resultCount3").innerHTML = "";
+    }
+  });
 
-function searchMovies(query) { 
-  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(query)}&language=en`;
+function searchMovies(query) {
+  const searchUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${encodeURIComponent(
+    query
+  )}&language=en`;
 
   fetch(searchUrl)
     .then((response) => response.json())
@@ -33,7 +35,7 @@ function searchMovies(query) {
         displaySearchResults(data.results);
       } else {
         document.getElementById("resultCount3").innerHTML = "No results found";
-        document.getElementById("searchResults3").innerHTML = ""; // إخفاء النتائج عند عدم العثور على أفلام
+        document.getElementById("searchResults3").innerHTML = "";
       }
     })
     .catch((error) => console.error("Error fetching search results:", error));
@@ -45,18 +47,26 @@ function displaySearchResults(results) {
 
   results.forEach((movie, index) => {
     searchResultsContainer += `
-      <a href="http://127.0.0.1:5500/pages/pageMove.html" class="movie-link" data-movie-index="${index}">
+      <a href="pageMove.html" class="movie-link" data-movie-index="${index}">
         <div class="search-card">  
           <h5 class="search-card-span-title">
             <img 
-              src="${movie.poster_path ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : 'default-poster.jpg'}" 
+              src="${
+                movie.poster_path
+                  ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}`
+                  : "default-poster.jpg"
+              }" 
               class="card-img-poster" 
               alt="${movie.title}"
             > 
-            ${movie.title} - (${movie.release_date ? movie.release_date.slice(0, 4) : "N/A"})
+            ${movie.title} - (${
+      movie.release_date ? movie.release_date.slice(0, 4) : "N/A"
+    })
           </h5>
           <span class="search-card-span-date"></span>
-          <span class="span-view">${movie.popularity} <i class="fa-solid fa-eye"></i></span>
+          <span class="span-view">${
+            movie.popularity
+          } <i class="fa-solid fa-eye"></i></span>
         </div>
       </a>
     `;
@@ -65,19 +75,17 @@ function displaySearchResults(results) {
   resultCountElement.textContent = `Found ${results.length} Movies`;
   document.getElementById("searchResults3").innerHTML = searchResultsContainer;
 
-  // إرفاق الأحداث لكل رابط فيلم
   attachMovieLinkEvents(results);
 }
 
 function attachMovieLinkEvents(moviesList) {
   const movieLinks = document.querySelectorAll(".movie-link");
-  
+
   movieLinks.forEach((link, index) => {
     link.addEventListener("click", function (event) {
       event.preventDefault();
       const movie = moviesList[index];
       if (movie) {
-        // جلب مقطع الدعائي من YouTube وحفظ البيانات
         fetchYouTubeTrailer(movie.title, (videoUrl) => {
           saveMovieToLocalStorage(movie, videoUrl);
           window.location.href = this.href;
@@ -104,7 +112,6 @@ function fetchYouTubeTrailer(query, callback) {
     })
     .catch((error) => console.error("Error fetching trailer:", error));
 }
-
 
 function saveMovieToLocalStorage(movie, videoUrl) {
   localStorage.setItem("poster_path", movie.poster_path);

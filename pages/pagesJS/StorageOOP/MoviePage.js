@@ -1,5 +1,3 @@
-
-//MoviePage.js
 export class MoviePage {
   constructor(storageService) {
     this.storageService = storageService;
@@ -8,13 +6,24 @@ export class MoviePage {
   updateDOM() {
     const data = this.storageService.getMovie();
 
-    this.updateElement("backdrop_path", `https://image.tmdb.org/t/p/w500/${data.backdropPath}`);
-    this.updateElement("poster", `https://image.tmdb.org/t/p/w500/${data.posterPath}`);
-    // this.updateElement("poster", data.posterPath);  // تأكد من أن src يتضمن URL الكامل هنا
+    this.updateElement(
+      "backdrop_path",
+      `https://image.tmdb.org/t/p/w500/${data.backdropPath}`
+    );
+    this.updateElement(
+      "poster",
+      `https://image.tmdb.org/t/p/w500/${data.posterPath}`
+    );
 
     this.updateTextElement("title", data.title);
-    this.updateTextElement("original_title", `Original Title: ${data.originalTitle}`);
-    this.updateTextElement("overview", `Overview: ${data.overview.slice(0, 250)}`);
+    this.updateTextElement(
+      "original_title",
+      `Original Title: ${data.originalTitle}`
+    );
+    this.updateTextElement(
+      "overview",
+      `Overview: ${data.overview.slice(0, 250)}`
+    );
     this.updateTextElement("popularity", `Popularity: ${data.popularity}`);
     this.updateTextElement("release_date", `Release Date: ${data.releaseDate}`);
     this.updateTextElement("average", `Average Vote: ${data.average}`);
@@ -54,5 +63,3 @@ export class MoviePage {
     }
   }
 }
-
-

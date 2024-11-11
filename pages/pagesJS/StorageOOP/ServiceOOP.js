@@ -1,5 +1,3 @@
-
-//ServiceOOP
 export class StorageService {
   constructor() {
     this.localStorage = window.localStorage;
@@ -7,9 +5,10 @@ export class StorageService {
   }
 
   saveMovie(movie, videoUrl) {
-    // this.localStorage.setItem("poster", movie.posterPath);
-    this.localStorage.setItem("poster", `https://image.tmdb.org/t/p/w500${movie.posterPath}`);
-
+    this.localStorage.setItem(
+      "poster",
+      `https://image.tmdb.org/t/p/w500${movie.posterPath}`
+    );
     this.localStorage.setItem("backdrop_path", movie.backdropPath);
     this.localStorage.setItem("title", movie.title);
     this.localStorage.setItem("original_title", movie.title);
@@ -18,7 +17,6 @@ export class StorageService {
     this.localStorage.setItem("average", Number(movie.voteAverage.toFixed(1)));
     this.localStorage.setItem("release_date", movie.releaseDate);
     this.localStorage.setItem("id", movie.id);
-    // this.localStorage.setItem('selectedMovie', JSON.stringify(movie));
     if (videoUrl) {
       this.localStorage.setItem("video_src2", videoUrl);
       this.sessionStorage.setItem("video_src2", videoUrl);
@@ -38,7 +36,6 @@ export class StorageService {
       releaseDate: this.localStorage.getItem("release_date"),
       id: this.localStorage.getItem("id"),
       videoSrc: this.localStorage.getItem("video_src2"),
-      // selectedMovie: JSON.parse(localStorage.getItem('selectedMovie'))
     };
   }
 
@@ -56,4 +53,3 @@ export class StorageService {
     console.log("Local storage cleared.");
   }
 }
-

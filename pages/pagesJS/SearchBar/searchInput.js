@@ -1,6 +1,4 @@
 
-
-// const apiKey = "bd27fabd4f448617eb4ef4dd33c7b66a";
 const youtubeApiKey = "AIzaSyAYjh_9bTwrrncv2ENpEGSYKHtgJjv4QJY";
 
 document.getElementById("searchInput").addEventListener("keyup", function () {
@@ -9,7 +7,7 @@ document.getElementById("searchInput").addEventListener("keyup", function () {
     searchMovies(query);
   } else {
     document.getElementById("searchResults").innerHTML = "";
-    document.getElementById("resultCount").innerHTML = ""; // إخفاء الرسالة عند عدم وجود بحث
+    document.getElementById("resultCount").innerHTML = ""; 
   }
 });
 
@@ -19,7 +17,7 @@ document.getElementById("searchInputInside").addEventListener("keyup", function 
     searchMovies(query);
   } else {
     document.getElementById("searchResults").innerHTML = "";
-    document.getElementById("resultCount").innerHTML = ""; // إخفاء الرسالة عند عدم وجود بحث
+    document.getElementById("resultCount").innerHTML = ""; 
   }
 });
 
@@ -45,7 +43,7 @@ function displaySearchResults(results) {
 
   results.forEach((movie, index) => {
     searchResultsContainer += `
-      <a href="http://127.0.0.1:5500/pages/pageMove.html" class="movie-link" data-movie-index="${index}">
+      <a href="pageMove.html" class="movie-link" data-movie-index="${index}">
         <div class="search-card">  
           <h5 class="search-card-span-title">
             <img 
@@ -65,7 +63,6 @@ function displaySearchResults(results) {
   resultCountElement.textContent = `Found ${results.length} Movies`;
   document.getElementById("searchResults").innerHTML = searchResultsContainer;
 
-  // إرفاق الأحداث لكل رابط فيلم
   attachMovieLinkEvents(results);
 }
 
@@ -77,7 +74,6 @@ function attachMovieLinkEvents(moviesList) {
       event.preventDefault();
       const movie = moviesList[index];
       if (movie) {
-        // جلب مقطع الدعائي من YouTube وحفظ البيانات
         fetchYouTubeTrailer(movie.title, (videoUrl) => {
           saveMovieToLocalStorage(movie, videoUrl);
           window.location.href = this.href;

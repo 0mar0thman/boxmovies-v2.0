@@ -7,7 +7,7 @@ searchInput.addEventListener("input", function () {
   const query = searchInput.value.trim();
   if (query) {
     popup.style.display = "block";
-    searchResults.innerHTML = `أنت تبحث عن: ${query}`;
+    searchResults.innerHTML = `Search for: ${query}`;
   } else {
     popup.style.display = "none";
   }
