@@ -42,7 +42,7 @@ function displayMoviesVotedMovies() {
 
       slider.innerHTML += `
         <div class="card">
-          <a href="#" class="btn-card-voted-movies" data-index="${index}">
+          <a href="pageMove.html" class="btn-card-voted-movies" data-index="${index}">
             <img src="https://image.tmdb.org/t/p/w500/${
               movie.poster_path
             }" class="card-img-top" alt="${movie.title}">

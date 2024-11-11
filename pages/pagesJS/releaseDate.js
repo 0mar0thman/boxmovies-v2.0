@@ -55,7 +55,7 @@ function displayMovies(filterType) {
 
       slider.innerHTML += `
         <div class="card">
-          <a href="#" class="btn-card${
+          <a href="pageMove.html" class="btn-card${
             filterType === "popularity" ? "" : "-release-date"
           }" data-index="${index}">
             <img src="https://image.tmdb.org/t/p/w500/${

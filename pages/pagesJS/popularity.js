@@ -37,7 +37,7 @@ function displayMovies() {
     fetchMovieCredits(movie.id, () => {
       slider.innerHTML += `
         <div class="card">
-          <a href="#" class="btn-card" data-index="${index}">
+          <a href="pageMove.html" class="btn-card" data-index="${index}">
             <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top" alt="${movie.title}">
             <div class="card-body">
               <h5 class="card-title text-center">${movie.title}</h5>
