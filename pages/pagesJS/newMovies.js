@@ -23,7 +23,7 @@ const VoteMovies = (function () {
     for (let i = 0; i < Math.min(moviesList.length, maxMoviesPerPage); i++) {
       container += `
             <div class="card card-new-movies">  
-              <a href="pages/pageMove.html" class="btn-vote btn-card" data-vote-index="${i}">
+              <a href="pageMove.html" class="btn-vote btn-card" data-vote-index="${i}">
                 <img src="https://image.tmdb.org/t/p/w500/${moviesList[i].poster_path}" class="card-img-top">
                <div class="card-body">
                 <h5>${moviesList[i].title}</h5>
@@ -86,7 +86,7 @@ const VoteMovies = (function () {
         if (movie) {
           fetchYouTubeTrailer(movie.id, (videoUrl) => {
             saveMovieToLocalStorage(movie, videoUrl);
-            window.location.href = "pages/pageMove.html";
+            window.location.href = "pageMove.html";
           });
         } else {
           console.log("Vote movie not found in the list.");
