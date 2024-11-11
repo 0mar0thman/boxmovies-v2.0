@@ -1,6 +1,4 @@
-
-
-const apiKey = "724fa79eddb78094bf31242df4a56d93"; 
+const apiKey = "724fa79eddb78094bf31242df4a56d93";
 const apiUrlBase = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&language=en`;
 const moviesPerPage = 8;
 const totalPages = 100;
@@ -11,10 +9,10 @@ let currentCardIndex = 0;
 
 function fetchMovies(page, filterType) {
   let apiUrl = `${apiUrlBase}&page=${page}`;
-  
-  if (filterType === 'popularity') {
+
+  if (filterType === "popularity") {
     apiUrl += `&sort_by=popularity.desc`;
-  } else if (filterType === 'release_date') {
+  } else if (filterType === "release_date") {
     apiUrl += `&sort_by=release_date.desc`;
   }
 
@@ -26,7 +24,9 @@ function fetchMovies(page, filterType) {
       updatePagination(page, totalPages, filterType);
       currentCardIndex = 0;
     })
-    .catch((error) => console.error(`Error fetching movies by ${filterType}:`, error));
+    .catch((error) =>
+      console.error(`Error fetching movies by ${filterType}:`, error)
+    );
 }
 
 function fetchMovieCredits(movieId, callback) {
@@ -40,21 +40,33 @@ function fetchMovieCredits(movieId, callback) {
 }
 
 function displayMovies(filterType) {
-  const slider = document.getElementById(`slider${filterType === 'popularity' ? '' : 'ReleaseDate'}`);
+  const slider = document.getElementById(
+    `slider${filterType === "popularity" ? "" : "ReleaseDate"}`
+  );
   slider.innerHTML = "";
 
   moviesList.forEach((movie, index) => {
     fetchMovieCredits(movie.id, (cast, crew) => {
       const director = crew.find((member) => member.job === "Director");
-      const mainCast = cast.slice(0, 3).map((actor) => actor.name).join(", ");
+      const mainCast = cast
+        .slice(0, 3)
+        .map((actor) => actor.name)
+        .join(", ");
 
       slider.innerHTML += `
         <div class="card">
-          <a href="#" class="btn-card${filterType === 'popularity' ? '' : '-release-date'}" data-index="${index}">
-            <img src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" class="card-img-top" alt="${movie.title}">
+          <a href="#" class="btn-card${
+            filterType === "popularity" ? "" : "-release-date"
+          }" data-index="${index}">
+            <img src="https://image.tmdb.org/t/p/w500/${
+              movie.poster_path
+            }" class="card-img-top" alt="${movie.title}">
             <div class="card-body">
               <h5 class="card-title text-center">${movie.title}</h5>
-              <p class="card-text text-center">${movie.release_date.slice(0,4)}</p>
+              <p class="card-text text-center">${movie.release_date.slice(
+                0,
+                4
+              )}</p>
             </div>
           </a>
         </div>
@@ -83,7 +95,9 @@ function storeMovieCredits(movieId) {
 }
 
 function updateSliderPosition(filterType) {
-  const slider = document.getElementById(`slider${filterType === 'popularity' ? '' : 'ReleaseDate'}`);
+  const slider = document.getElementById(
+    `slider${filterType === "popularity" ? "" : "ReleaseDate"}`
+  );
   const cardWidth = document.querySelector(".card").offsetWidth;
   slider.style.transform = `translateX(-${
     currentCardIndex * (cardWidth + 10)
@@ -91,8 +105,13 @@ function updateSliderPosition(filterType) {
 }
 
 document.addEventListener("click", (event) => {
-  if (event.target.closest(".btn-card") || event.target.closest(".btn-card-release-date")) {
-    const index = event.target.closest(".btn-card")?.getAttribute("data-index") || event.target.closest(".btn-card-release-date").getAttribute("data-index");
+  if (
+    event.target.closest(".btn-card") ||
+    event.target.closest(".btn-card-release-date")
+  ) {
+    const index =
+      event.target.closest(".btn-card")?.getAttribute("data-index") ||
+      event.target.closest(".btn-card-release-date").getAttribute("data-index");
     const movie = moviesList[index];
     if (movie) {
       localStorage.setItem("poster_path", movie.poster_path);
@@ -112,7 +131,7 @@ document.addEventListener("click", (event) => {
 
       fetchYouTubeTrailer(movie.id, (videoUrl) => {
         localStorage.setItem("video_src2", videoUrl);
-        window.location.href = "pages/pageMove.html";
+        window.location.href = "pageMove.html";
       });
     }
   }
@@ -144,35 +163,41 @@ document.getElementById("nextCardButton").addEventListener("click", () => {
   const totalCards = moviesList.length;
   if (currentCardIndex < totalCards - 1) {
     currentCardIndex++;
-    updateSliderPosition('popularity');
+    updateSliderPosition("popularity");
   }
 });
 
 document.getElementById("prevCardButton").addEventListener("click", () => {
   if (currentCardIndex > 0) {
     currentCardIndex--;
-    updateSliderPosition('popularity');
+    updateSliderPosition("popularity");
   }
 });
 
-document.getElementById("nextCardButtonReleaseDate").addEventListener("click", () => {
-  const totalCards = moviesList.length;
-  if (currentCardIndex < totalCards - 1) {
-    currentCardIndex++;
-    updateSliderPosition('release_date');
-  }
-});
+document
+  .getElementById("nextCardButtonReleaseDate")
+  .addEventListener("click", () => {
+    const totalCards = moviesList.length;
+    if (currentCardIndex < totalCards - 1) {
+      currentCardIndex++;
+      updateSliderPosition("release_date");
+    }
+  });
 
-document.getElementById("prevCardButtonReleaseDate").addEventListener("click", () => {
-  if (currentCardIndex > 0) {
-    currentCardIndex--;
-    updateSliderPosition('release_date');
-  }
-});
+document
+  .getElementById("prevCardButtonReleaseDate")
+  .addEventListener("click", () => {
+    if (currentCardIndex > 0) {
+      currentCardIndex--;
+      updateSliderPosition("release_date");
+    }
+  });
 
 function updatePagination(currentPage, totalPages, filterType) {
-  const pagination = document.getElementById(`pagination${filterType === 'popularity' ? '' : 'ReleaseDate'}`);
-  pagination.innerHTML = ""; 
+  const pagination = document.getElementById(
+    `pagination${filterType === "popularity" ? "" : "ReleaseDate"}`
+  );
+  pagination.innerHTML = "";
 
   const maxButtons = 5;
   const startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
@@ -217,5 +242,5 @@ function updatePagination(currentPage, totalPages, filterType) {
   }
 }
 
-fetchMovies(currentPagePopularity, 'popularity');
-fetchMovies(currentPageReleaseDate, 'release_date');
+fetchMovies(currentPagePopularity, "popularity");
+fetchMovies(currentPageReleaseDate, "release_date");

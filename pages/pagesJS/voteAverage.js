@@ -48,7 +48,7 @@ function displayMoviesVotedMovies() {
             }" class="card-img-top" alt="${movie.title}">
             <div class="card-body">
               <h5 class="card-title text-center">${movie.title}</h5>
-    <p class="card-text text-center">${movie.release_date.slice(0, 4)}</p>
+              <p class="card-text text-center">${movie.release_date.slice(0, 4)}</p>
             </div>
           </a>
         </div>
@@ -110,8 +110,7 @@ document.addEventListener("click", (event) => {
 
       fetchYouTubeTrailer(movie.id, (videoUrl) => {
         localStorage.setItem("video_src2", videoUrl);
-
-        window.location.href = "pages/pageMove.html";
+        window.location.href = "pageMove.html";
       });
     }
   }

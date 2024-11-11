@@ -99,7 +99,7 @@ document.addEventListener("click", (event) => {
 
       fetchYouTubeTrailer(movie.id, (videoUrl) => {
         localStorage.setItem("video_src2", videoUrl);
-        window.location.href = "pages/pageMove.html";
+        window.location.href = "pageMove.html";
       });
     }
   }
